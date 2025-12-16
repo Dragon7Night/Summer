@@ -1,0 +1,85 @@
+PASO 1 
+- Creacion del proyecto
+- Creacion de las apps [Principal y Gestora de Usuarios]
+    > Principal [Empleza, Escuela, Clinica y etc.]
+    > Gestora de usuarios [Usuarios, accounts y etc.]
+- Creacion de la carpetas [templates, static y Apps]
+
+PASO 2
+- Configuracion del settings 
+    > Configuracion de templates
+    > Configuacion de aplicaciones
+        ¬ Apps principales [Escuela y Usuarios]
+        ¬ App Externa [rest_framework]
+    > Base de datos
+    > Archivos estaticos
+
+PASO 3
+
+- Construccion del Models de la app principal
+    > Definicion de campos y importaciones
+    > Migraciones de los modelos [makemigrations y migrate]
+
+- Creacion de archivos de forms.py y serializer.py en la app principal
+
+- Construccion de los formularios [forms.py]
+    > Realizar las importaciones de los modelos creados
+    > Realizar las importaciones forms
+
+- Construccion de los serializadores [serializer.py]
+    > Realizar las importaciones de los modelos creados
+    > Realizar las importaciones rest_framework
+
+PASO 4
+
+- Configuracion de las vistas de la App principal [view.py]
+    > Construccion de las vista para el CRUD de Django 
+    > Construccion de las vistas para el CRUD del admin desde el panel de Django 
+    > Construccion de las vistas para el CRUD con la API de rest framework
+
+- Configuracion de las urls de todas las Apps [urls.py]
+    > Creacion de los archivos de urls.py en todas las apps
+        ¬ Asigancion de las urls al urls.py del proyecto principal
+    
+    > Enlazar todas las vistas creadas a los diferentes urls
+        ¬ Usando la libreria de >> include << importada en el urls.py principal
+
+
+PASO 5 
+
+- Construccion de templates del proyecto
+    > Templates del CRUD
+    > Templates del ingreso de usuario [SignUP y LogIN]
+
+
+----------------------------------------
+
+PASO DE VERIFICACION RAPIDO
+
+Completar pasos 1, 2 y 3 y luego construccion de archivo index asigano a
+una vista >>> def home(): <<< para corroborrar el funcionamiento y 
+configuracion del proyecto 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
