@@ -8,74 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
 
-
     <meta name="generator" content="Astro v5.13.2" />
     <title>HOME</title>
 
     <!-- IMPORTACIONES DE CSS -->
     {% include 'Importaciones/head_css.html' %}
 
-
-
 </head>
 
 <body>
 
-
     <!-- BARRA DE NAVEGACION -->
     {% include 'Complementos/navBar.html' %}
 
-
     <main>
-
-        <!-- FORMULARIO DE REGISTRO -->
-        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-            <div class="row align-items-center g-lg-5 py-5">
-                <div class="col-lg-7 text-center text-lg-start">
-                    <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
-                        Vertically centered hero sign-up form
-                    </h1>
-                    <p class="col-lg-10 fs-4">
-                        Below is an example form built entirely with Bootstrap’s form
-                        controls. Each required form group has a validation state that can
-                        be triggered by attempting to submit the form without completing
-                        it.
-                    </p>
-                </div>
-                <div class="col-md-10 mx-auto col-lg-5">
-                    <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput"
-                                placeholder="name@example.com" />
-                            <label for="floatingInput">Email address</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
-                            <label for="floatingPassword">Password</label>
-                        </div>
-                        <div class="checkbox mb-3">
-                            <label>
-                                <input type="checkbox" value="remember-me" /> Remember me
-                            </label>
-                        </div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">
-                            Sign up
-                        </button>
-                        <hr class="my-4" />
-                        <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <h1>hola {{user.username}}</h1>
-
+        
         <!-- CARD DE CONTENIDO -->
         <div class="container my-5">
             <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
                 <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
                     <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
-                        Border hero with cropped image and shadows
+                        Hola, {{user.username}} Bienvenido.
                     </h1>
                     <p class="lead">
                         Quickly design and customize responsive mobile-first sites with
@@ -92,9 +45,6 @@
                         </button>
                     </div>
                 </div>
-                <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                    <img class="rounded-lg-3" src="" alt="" width="720" />
-                </div>
             </div>
         </div>
 
@@ -102,97 +52,10 @@
 
     </main>
 
+
     <!-- FOOTER -->
-    <footer class="container py-5">
-        <div class="row">
-            <div class="col-12 col-md">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img"
-                    viewBox="0 0 24 24">
-                    <title>Product</title>
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path
-                        d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
-                    </path>
-                </svg>
-                <small class="d-block mb-3 text-body-secondary">&copy; 2017–2025</small>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Features</h5>
-                <ul class="list-unstyled text-small">
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Cool stuff</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Random feature</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Team feature</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Stuff for developers</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Another one</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Last time</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Resource name</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Resource</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Another resource</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Final resource</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>Resources</h5>
-                <ul class="list-unstyled text-small">
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Business</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Education</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Government</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Gaming</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>About</h5>
-                <ul class="list-unstyled text-small">
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Team</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Locations</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Privacy</a>
-                    </li>
-                    <li>
-                        <a class="link-secondary text-decoration-none" href="#">Terms</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+    {% include 'Complementos/footer.html' %}
+
 
     <!-- IMPORTACIONES DE SCRIPTS -->
     {% include 'Importaciones/body_script.html' %}
