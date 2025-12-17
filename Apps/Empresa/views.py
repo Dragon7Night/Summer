@@ -24,24 +24,32 @@ from rest_framework import status
 
 # ------------------------------------------------------------------
 
+# Vista del Home de la pagina visita
+def homeGeneral(request):
+    return render(request, 'index2.html')
+
 # Vista del Home de la pagina
+@login_required(login_url='')
 def homeMain(request):
     return render(request, 'index.html')
+
+
 
 # !=================VISTAS CRUD DE DJANGO==========================
 
 # .=========Vista de cargo
 
 # Devuelve todos los datos de la tabla Cargo
-#@login_required(login_url='')
+@login_required(login_url='')
 def dataCargo(request):
     cargoObject = Cargo.objects.all()
     data = {'CargoKey':cargoObject}
 
-    return render(request, 'xxxxxxxx.html', data)
+    return render(request, 'Objetos/Cargo/data_cargo.html', data)
 
 
 # Muestra y registra los datos en el formulario de Cargo
+@login_required(login_url='')
 def registrarCargo(request):
     formCargo = CargoForm()
 
@@ -50,13 +58,14 @@ def registrarCargo(request):
         if formCargo.is_valid():
             formCargo.save()
 
-            return HttpResponseRedirect(reverse('xxxxxxx'))
+            return HttpResponseRedirect(reverse('data_cargo'))
         
     data = {'formKey':formCargo}
-    return render(request, 'xxxxx.html', data)
+    return render(request, 'Objetos/Cargo/crear_cargo.html', data)
 
 
 # Permite editar un cargo por ID
+@login_required(login_url='')
 def editarCargo(request, id_cargo):
     cargoObject = get_object_or_404(Cargo, id=id_cargo)
     formCargo = CargoForm(instance=cargoObject)
@@ -65,18 +74,19 @@ def editarCargo(request, id_cargo):
         formCargo = CargoForm(request.POST, instance=cargoObject)
         if formCargo.is_valid():
             formCargo.save()
-            return HttpResponseRedirect(reverse('xxxxxx'))
+            return HttpResponseRedirect(reverse('data_cargo'))
     
     data = {'formKey':formCargo}
-    return render(request, 'xxxxxxxx.html', data)
+    return render(request, 'Objetos/Cargo/crear_cargo.html', data)
 
 
 # Permite eliminar un Cargo por ID
+@login_required(login_url='')
 def eliminarCargo(request, id_cargo):
     cargoObject = get_object_or_404(Cargo, id=id_cargo)
     cargoObject.delete()
 
-    return HttpResponseRedirect(reverse('xxxxxxxx'))
+    return HttpResponseRedirect(reverse('data_cargo'))
 
 # .=========Vista de Empleado
 
@@ -86,10 +96,11 @@ def dataEmpleado(request):
     empleadoObject = Empleado.objects.all()
     data = {'EmpleadoKey':empleadoObject}
 
-    return render(request, 'xxxxxxxx.html', data)
+    return render(request, 'Objetos/Empleado/data_empleado.html', data)
 
 
 # Muestra y registra los datos en el formulario de Empleado
+@login_required(login_url='')
 def registrarEmpleado(request):
     formEmpleado = EmpleadoForm()
 
@@ -98,13 +109,14 @@ def registrarEmpleado(request):
         if formEmpleado.is_valid():
             formEmpleado.save()
 
-            return HttpResponseRedirect(reverse('xxxxxxx'))
+            return HttpResponseRedirect(reverse('data_empleado'))
         
     data = {'formKey':formEmpleado}
-    return render(request, 'xxxxx.html', data)
+    return render(request, 'Objetos/Empleado/crear_empleado.html', data)
 
 
 # Permite editar un Cargp por ID
+@login_required(login_url='')
 def editarEmpleado(request, id_empleado):
     empleadoObject = get_object_or_404(Empleado, id=id_empleado)
     formEmpleado = EmpleadoForm(instance=empleadoObject)
@@ -113,18 +125,19 @@ def editarEmpleado(request, id_empleado):
         formEmpleado = EmpleadoForm(request.POST, instance=empleadoObject)
         if formEmpleado.is_valid():
             formEmpleado.save()
-            return HttpResponseRedirect(reverse('xxxxxx'))
+            return HttpResponseRedirect(reverse('data_empleado'))
     
     data = {'formKey':formEmpleado}
-    return render(request, 'xxxxxxxx.html', data)
+    return render(request, 'Objetos/Empleado/crear_empleado.html', data)
 
 
 # Permite eliminar un Empleado por ID
+@login_required(login_url='')
 def eliminarEmpleado(request, id_empleado):
     empleadoObject = get_object_or_404(Empleado, id=id_empleado)
     empleadoObject.delete()
 
-    return HttpResponseRedirect(reverse('xxxxxxxx'))
+    return HttpResponseRedirect(reverse('data_empleado'))
 
 
 # !================= VISTAS CRUD DE LA API CON Django Framework ==========================

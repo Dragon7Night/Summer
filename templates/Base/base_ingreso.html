@@ -22,11 +22,40 @@
 <body>
 
 
+    <nav class="navbar navbar-expand-md bg-dark sticky-top border-bottom" data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand d-md-none" href="#">
+                <svg class="bi" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="#aperture"></use>
+                </svg>
+                Aperture
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+                aria-controls="offcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasLabel">Aperture</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        <li class="nav-item"><a
+                                class="nav-link text-white font-weight-bold px-0 justify-content-center fw-100 fs-2"
+                                href="{% url 'home_general' %}">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
     <main>
 
         <!-- FORMULARIO DE REGISTRO -->
-        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-            <div class="row align-items-center g-lg-5 py-5">
+        <div class="container col-12 px-4 py-5">
+            <div class="row align-items-center py-5">
 
                 {% block card_ingreso %}
                 {# CONTENIDO DE LA CARTA DE INGRESO #}

@@ -20,23 +20,29 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav flex-grow-1 justify-content-between">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" aria-label="Aperture">
-                            <svg class="bi" width="24" height="24" aria-hidden="true">
-                                <use xlink:href="#aperture"></use>
-                            </svg>
-                        </a>
+ 
+                    <li class="nav-item"><a class="nav-link text-white font-weight-bold px-0 justify-content-start" href="{% url 'home_main' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'data_cargo' %}">DataCargo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'registrar_cargo' %}">CrearCargo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'data_empleado' %}">DataEmpleado</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'registrar_empleado' %}">CrearEmpleado</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'data_cargo_api' %}">CarApiData</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'data_empleado_api' %}">EmpApiData</a></li>
+
+
+                    <li class="nav-item d-flex align-items-end">
+
+                        <!-- BOTON DE CERRAR SESIÓN -->
+                        <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="nav-link text-white font-weight-bold px-0"
+                                style="background: none; border: none;">
+                                <i class="fa-solid fa-right-from-bracket me-2"></i>
+                                <span class="d-sm-inline d-none">Cerrar sesión</span>
+                            </button>
+                        </form>
+
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Tour</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Enterprise</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
                 </ul>
             </div>
         </div>

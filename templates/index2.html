@@ -1,18 +1,14 @@
-{% extends 'Base/base_index.html' %}
+{% extends 'Base/base_ingreso.html' %}
+
 
 {% load static %}
 
-
-
-{% block card_contenido %}
-
-
-<!-- CARD DE CONTENIDO -->
+{% block card_ingreso %}
 <div class="container my-5">
     <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
         <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
             <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
-                Hola, {{user.username}} Bienvenido!!
+                Bienvenido usuario
             </h1>
             <p class="lead">
                 Nos alegra tenerte aquí. Explora con confianza, descubre nuevas funciones y aprovecha al máximo
@@ -22,10 +18,11 @@
 
                 <ul>
                     <li class="list-unstyled">
-                        <a type="button" class="btn btn-success" href="{% url 'data_cargo_api' %}"> API de Cargo</a>
-                        <a type="button" class="btn btn-primary" href="{% url 'data_empleado_api' %}"> API de
-                            Empleados</a>
+                        <a type="button" class="btn btn-success" href="{% url 'log_in' %}"> Iniciar Sesión</a>
+                        <a type="button" class="btn btn-primary" href="{% url 'sign_up' %}"> Registrarse</a>
                     </li>
+
+
 
                 </ul>
 
@@ -33,7 +30,6 @@
         </div>
     </div>
 </div>
-
 
 
 {% endblock %}

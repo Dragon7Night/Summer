@@ -17,13 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from Apps.Empresa.views import homeMain
+from Apps.Empresa.views import homeMain, homeGeneral
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('usuarios/', include('django.contrib.auth.urls')),
 
-    path('', homeMain, name='home_main'),
+    path('', homeGeneral, name='home_general'),
+    path('home/', homeMain, name='home_main'),
     
     path('usuarios/', include('Apps.Usuarios.urls')),
     path('empresa/', include('Apps.Empresa.urls')),
