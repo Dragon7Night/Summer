@@ -7,9 +7,16 @@ from django.core import validators
 from Apps.Empresa.models import Empleado, Cargo
 
 
-
 class CargoForm(forms.Form):
-    nombre = forms.CharField()
+    nombre = forms.CharField(validators=[
+        validators.MinLengthValidator(3),
+        validators.MaxLengthValidator(60)
+    ],
+    widget=forms.TextInput(attrs={
+        'class':'form-control',
+        'placeholder':'Ej. Administrador'
+    }),
+    label='Nombre:')
 
 
 class CargoForm(forms.ModelForm):
@@ -17,14 +24,39 @@ class CargoForm(forms.ModelForm):
         model = Cargo
         fields = ['nombre']
 
-    nombre = forms.CharField()
+    nombre = forms.CharField(validators=[
+        validators.MinLengthValidator(3),
+        validators.MaxLengthValidator(60)
+    ],
+    widget=forms.TextInput(attrs={
+        'class':'form-control',
+        'placeholder':'Ej. Administrador'
+    }),
+    label='Nombre:')
 
 # *--------------------------------
 
 class EmpleadoForm(forms.Form):
-    nombre = forms.CharField()
+    nombre = forms.CharField(validators=[
+        validators.MinLengthValidator(3),
+        validators.MaxLengthValidator(60)
+    ],
+    widget=forms.TextInput(attrs={
+        'class':'form-control',
+        'placeholder':'Ej. Alverto'
+    }),
+    label='Nombre:')
+    
     correo = forms.EmailField()
-    salario = forms.FloatField()
+
+    salario = forms.FloatField(validators=[
+        validators.MinValueValidator(0)
+    ],
+    widget=forms.NumberInput(attrs={
+        'class':'form-control',
+        'placeholder':'Ej. $500.000'
+    }),
+    label='Salario ($):')
 
 class EmpleadoForm(forms.ModelForm):
 
@@ -32,9 +64,26 @@ class EmpleadoForm(forms.ModelForm):
         model = Empleado
         fields = ['nombre','correo','salario']
 
-    nombre = forms.CharField()
+    nombre = forms.CharField(validators=[
+        validators.MinLengthValidator(3),
+        validators.MaxLengthValidator(60)
+    ],
+    widget=forms.TextInput(attrs={
+        'class':'form-control',
+        'placeholder':'Ej. Alverto'
+    }),
+    label='Nombre:')
+
     correo = forms.EmailField()
-    salario = forms.FloatField()
+
+    salario = forms.FloatField(validators=[
+        validators.MinValueValidator(0)
+    ],
+    widget=forms.NumberInput(attrs={
+        'class':'form-control',
+        'placeholder':'Ej. $500.000'
+    }),
+    label='Salario ($):')
 
 
 
