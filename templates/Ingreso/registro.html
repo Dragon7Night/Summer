@@ -15,8 +15,11 @@
                 <h1 class="h4 text-gray-900 mb-4">Crear cuanta</h1>
             </div>
             <form class="user" method="post">
-                <!-- NOTA ↓↓: todos los formularios <form> tiene que tener un token de seguridad en su interior-->
+
                 {% csrf_token %}
+
+
+
                 <div class="form-group">
                     <input type="text" class="form-control form-control-user" id="id_username" name="username"
                         placeholder="Nombre de usuario" required autofocus>
@@ -31,8 +34,7 @@
                             placeholder="Repita la contraseña" required autocomplete="current-password">
                     </div>
                 </div>
-                
-                <!-- NOTA: en los formularios siempre se usan <button> de tipo submit -->
+
                 <button type="submit" class="btn btn-primary btn-user btn-block">Crear cuenta</button>
 
             </form>
