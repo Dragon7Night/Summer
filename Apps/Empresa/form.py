@@ -58,11 +58,17 @@ class EmpleadoForm(forms.Form):
     }),
     label='Salario ($):')
 
+
+    cargo = forms.ModelChoiceField(queryset=Cargo.objects.all().order_by('nombre'),
+                                           label='Marque una de las opciones')
+
+
+
 class EmpleadoForm(forms.ModelForm):
 
     class Meta:
         model = Empleado
-        fields = ['nombre','correo','salario']
+        fields = ['nombre','correo','salario','cargo']
 
     nombre = forms.CharField(validators=[
         validators.MinLengthValidator(3),
@@ -84,6 +90,11 @@ class EmpleadoForm(forms.ModelForm):
         'placeholder':'Ej. $500.000'
     }),
     label='Salario ($):')
+
+
+    cargo = forms.ModelChoiceField(queryset=Cargo.objects.all().order_by('nombre'),
+                                           label='Marque una de las opciones')
+
 
 
 
