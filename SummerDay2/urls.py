@@ -21,10 +21,13 @@ from Apps.Empresa.views import homeMain
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', homeMain, name='home_main'),
+    path('usuarios/', include('django.contrib.auth.urls')),
 
-    path('empresa/', include('Apps.Empresa.urls')),
+    path('', homeMain, name='home_main'),
+    
     path('usuarios/', include('Apps.Usuarios.urls')),
+    path('empresa/', include('Apps.Empresa.urls')),
+
 
 ]
 

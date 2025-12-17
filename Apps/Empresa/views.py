@@ -33,7 +33,7 @@ def homeMain(request):
 # .=========Vista de cargo
 
 # Devuelve todos los datos de la tabla Cargo
-@login_required(login_url='')
+#@login_required(login_url='')
 def dataCargo(request):
     cargoObject = Cargo.objects.all()
     data = {'CargoKey':cargoObject}
